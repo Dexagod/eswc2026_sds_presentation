@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>
+    The Vocabulary Hub as a Catalog of Semantic Artifacts for Discovery and Alignment
+  </title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <link rel="stylesheet" href="./_shared/styles/shower-ruben.css">
+  <link rel="stylesheet" href="./_shared/styles/web-fundamentals.css">
+  <link rel="stylesheet" href="custom.css">
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+</head>
+<body class="shower list">
+  <header class="caption">
+    <h1>
+      <a class="module" href="#title">The Vocabulary Hub as a Catalog of Semantic Artifacts for Discovery and Alignment</a>
+    </h1>
+    <p>Presented at the <a href="https://dbis.rwth-aachen.de/SDS26/">Semantics in Dataspaces workshop</a> at the <a href="https://2026.eswc-conferences.org/">2026 Extended Semantic Web Conference</a>.</p>
+    <p>
+      <a href="https://rubendedecker.be/">Ruben Dedecker</a>,
+      <a href="https://www.ugent.be/">Ghent University</a> – <a href="https://www.imec.be/">imec</a>
+    </p>
+  </header>
+
+  <div class="title slide" id="title">
+    <h2>
+      <a class="module" href="#title" style="font-size: .7em; line-height: .7em;">
+        The Vocabulary Hub as a Catalog
+        of Semantic Artifacts for
+        Discovery and Alignment
+      </a>
+    </h2>
+    <h3 style="font-size: .8em; margin-top: -1em;">
+      Semantics in Dataspaces workshop at ESWC 2026
+    </h3>
+    <br>
+    <p class="author"><a href="https://rubendedecker.be/">Ruben Dedecker</a></p>
+    <p class="affiliation">
+      <a href="https://www.ugent.be/"><img  class="ugent"  src="./_shared/images/logos/ugent.svg"  alt="Ghent University"></a>
+      <a href="https://www.imec.be/"><img class="imec" src="./_shared/images/logos/imec.svg" alt="imec"></a>
+      <a href="https://idlab.technology/"><img class="idlab" src="./_shared/images/logos/idlab.svg" alt="IDLab"></a>
+    </p>
+    <!-- <p class="license">
+      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="./_shared/images/cc-by.svg" /></a>
+      Except where otherwise noted, the content of these slides is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </p> -->
+  </div>
+
+  <!-- contextualization -->
+    <!-- <div class="slide" id="">
+      <h2>
+        Contextualization
+      </h2>
+      <ul class="higher" style="margin-left: 3em !important">
+        <li class="small">
+          EU Common Data Spaces initiatives
+        </li>
+        <li class="small">
+          Cross border data sharing and integration
+        </li>
+        <li class="small">
+          Goal for Semantic interoperability
+        </li>
+        <li class="small">
+          Work performed for DeployEMDS project
+        </li>
+      </ul>
+       <footer class="footer">
+          <p>
+            EU Data Spaces initiatives aim for cross border data sharing, relying on the ability to make data from heterogeneous sources semantically interoperable. 
+            In this con
+          </p>
+      </footer>
+    </div> -->
+
+
+
+  <!-- contextualization -->
+    <div class="slide" id="">
+      <figure class="cover height">
+        <img src="images/eu_data_spaces_cropped.png">
+      </figure>
+       <footer class="footer">
+          <p>
+            The Common EU Data Spaces initiatives aim for cross border data sharing over different industry and government sectors. It depends on the ability to make data from heterogeneous sources semantically interoperable. 
+          </p>
+      </footer>
+    </div>
+
+  
+  <!-- need -->
+    <div class="slide" id="context">
+      <h2>
+        Data spaces are heterogeneous
+      </h2>
+      <ul class="higher" style="margin-left: 3em !important">
+        <li class="small">
+          <b>Regional initiatives</b> (OSLO)<br>
+          provide local publishing baselines
+        </li>
+        <li class="small">
+          <b>Established standards</b> (DATEX)<br>
+          provide international interoperability
+        </li>
+        <li class="small">
+          <b>Semantic alignment</b> bridges the gap<br>
+          between heterogeneous data models
+        </li>
+      </ul>
+       <footer class="footer">
+          <p>
+            The data models utilized in the EU are often country and domain specific. Where some cross border standards exist at the European level, much of the available data is stuck in more direct specifications and regional modeling initiatives. 
+          </p>
+      </footer>
+    </div>
+
+
+  <!-- related work -->
+    <div class="slide" id="voc-hub">
+      <h2>
+        The Vocabulary Hub
+      </h2>
+      <ul class="higher" style="margin-left: 3em !important">
+        <li class="small">
+          <b>The Vocabulary Hub</b> manages semantic<br> 
+          artifacts as ontologies and specifications
+        </li>
+
+        <li class="small">
+          <b>Available tooling</b> performs alignments<br>
+          over internal data model definitions
+        </li>
+        <li class="">
+          Can we generalize alignments<br>
+          to scale with the data space?
+        </li>
+      </ul>
+    </div>
+    
+    <div class="toc slide" id="toc-artifacts">
+      <ul>
+        <li class="current"><a href="#toc-artifacts">Data space artifacts</a>
+          <ul>
+            <li><a href="#dataset">Dataset description</a></li>
+            <li><a href="#profile">Dataset profile</a></li>
+            <li><a href="#alignment">Alignment artifact</a></li>
+          </ul>
+        </li>
+        <li><a href="#toc-architecture">Architectural implications</a></li> 
+        <li><a href="#toc-usecase">DeployEMDS use case</a></li>
+      </ul>
+    </div>
+
+  <!-- dcat catalogs + mobility dcat-ap -->
+    <div class="slide" id="dataset">
+      <h2>
+        Dataset description
+      </h2>
+      <ul class="higher" style="margin-left: 3em !important">
+        <li class="small">
+          <b>DCAT catalogs</b> provide a basis<br>
+          for discovery and interoperability
+        </li>
+        <li class="small">
+          <b>Application profiles</b> define<br>
+          domain-specific metadata
+        </li>
+        <li class="">
+          Standards internalize formats, schemas, 
+          vocabularies, specifications, ...<br>
+        </li>
+      </ul>
+    </div>
+
+  <!-- dataset profile -->
+    <div class="slide" id="profile">
+      <h2>
+        Dataset profile
+      </h2>
+      <ul class="higher" style="margin-left: 3em !important">
+        <li class="small">
+          <b>Unified profile</b> declaration of specification<br>
+          defining internal and extended constraints
+        </li>
+        <li class="small">
+          <b>Semantic artifact</b> published by the<br>
+          Vocabulary Hub as a profile catalog
+        </li>
+        <li class="">
+          Dataset profiles explicitly link relevant<br>
+          resources for discovery and alignment
+        </li>
+      </ul>
+    </div>
+
+  <!-- alignment artifact -->
+    <div class="slide" id="alignments">
+      <h2>
+        Alignment artifact
+      </h2>
+      <ul class="higher" style="margin-left: 3em !important">
+        <li class="small">
+          Defines <b>alignment profile</b> from<br>
+          source to target dataset profile
+        </li>
+        <li class="small">
+          Publishes <b>executable mappings</b> as<br>
+          <b>semantic artifact</b> in the vocabulary hub
+          <ul>
+            <li>SPARQL Construct, RML, Notation3</li>
+          </ul>
+        </li>
+        <li class="">
+          Alignment artifacts enable automating<br>
+          integration pipelines by consumers
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="slide" id="dataset-code">
+      <h2>From datasets</h2>
+      <figure class="width higher">
+        <img src="images/dataset.jpg" alt="">
+      </figure>
+    </div>
+    <div class="slide" id="profile-code">
+
+      <h2>to profiles</h2>
+      <figure class="width higher">
+        <img src="images/profile.jpg" alt="">
+      </figure>
+    </div>
+
+    <div class="slide" id="alignments-code">
+      <h2>to alignments</h2>
+      <figure class="width higher">
+        <img src="images/align.jpg" alt="">
+      </figure>
+    </div>
+
+    <div class="toc slide" id="toc-architecture">
+      <ul>
+        <li><a href="#toc-artifacts">Data space artifacts</a></li>
+        <li class="current"><a href="#toc-architecture">Architectural implications</a>
+          <ul>
+            <li><a href="#dataset-publishing">Dataset publishing</a></li>
+            <li><a href="#alignment-publishing">Alignment publishing</a></li>
+            <li><a href="#discovery-and-integration">Discovery and integration</a></li>
+          </ul>
+        </li>
+        <li><a href="#toc-usecase">DeployEMDS use case</a></li>
+      </ul>
+    </div>
+
+
+  <!-- dataset definition -->
+    <div class="slide" id="dataset-publishing">
+      <h2>
+        Dataset publishing
+      </h2>
+      <figure class="higher">
+        <img src="images/sd_crop_dataset.png" alt="">
+      </figure>
+    </div>
+
+
+  <!-- alignment publishing -->
+    <div class="slide" id="alignment-publishing">
+      <h2>
+        Alignment publishing 
+      </h2>
+      <figure class="higher">
+        <img src="images/sd_crop_alignment.png" alt="">
+      </figure>
+    </div>
+
+
+  <!-- discovery and integration (reference pipelines) -->
+    <div class="slide" id="discovery-and-integration">
+      <h2>
+        Discovery and integration
+      </h2>
+      <figure class="higher ">
+        <img src="images/sd_crop_discover.png" alt="">
+      </figure>
+    </div>
+
+
+    <div class="toc slide" id="toc-usecase">
+      <ul>
+        <li><a href="#toc-artifacts">Data space artifacts</a></li>
+        <li><a href="#toc-architecture">Architectural implications</a></li>
+        <li class="current"><a href="#toc-usecase">DeployEMDS use case</a>
+          <ul>
+            <li><a href="#project">Project description</a></li>
+            <li><a href="#pipeline">Continuous integration</a></li>
+            <li><a href="#demo">Demonstrator</a></li>
+            
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+
+  <!-- use case introduction -->
+    <div class="slide" id="project">
+      <h2>
+        DeployEMDS - Alignment of traffic counts
+      </h2>
+      <ul class="higher" style="margin-left: 3em !important">
+        <li class="small">
+          Regional and industry partners<br>
+          over Flanders and Germany
+        </li>
+        <li class="small">
+          Alignment of internal data model with,<br>
+          OSLO Verkeersmetingen and SensorThings
+        </li>
+        <li class="small">
+          Client integration based on automated<br>
+          pipelines for continous mapping and integration
+        </li>
+      </ul>
+    </div>
+
+
+  <!-- end-to-end pipeline setup -->
+    <div class="slide" id="pipeline">
+      <h2>
+        Continuous integrations through pipelines
+      </h2>
+      <ul class="higher" style="margin-left: 3em !important">
+        <li class="small">
+          RDF-Connect pipelines used for publishing<br>
+          mapping and integrating RDF data using LDES
+        </li>
+        <li class="small">
+          Pipeline setup based on client discovery<br>
+          of profiles and alignments in data space
+        </li>
+        <li class="small">
+          Artifact catalogs provide interoperable<br>
+          baseline for artifact discovery
+        </li>
+      </ul>
+    </div>
+
+
+  <!-- demo -->
+    <div class="slide title" id="demo">
+      <h2>It's demo time!</h2>
+      <a href="https://idlabresearch.github.io/vocabulary-hub/">https://idlabresearch.github.io/vocabulary-hub/</a>
+    </div>
+
+
+  <!-- end-to-end pipeline setup -->
+    <div class="slide" id="">
+      <h2>
+        Where do we go from here?
+      </h2>
+      <ul class="higher" style="margin-left: 3em !important">
+        <li class="small">
+          Integration of approach in wider<br>
+          data space deployments
+        </li>
+        <li class="small">
+          Evaluating dataset profiles as basis<br>
+          for AI discovery and alignment systems
+        </li>
+      </ul>
+    </div>
+
+
+
+  
+  <footer>
+    <!-- <p class="badge"><a href="https://github.com/Dexagod/IDLab-day-presentation">View on GitHub</a></p> -->
+    <p class="license">
+      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="./_shared/images/cc-by-small.svg" /></a>
+      Except where otherwise noted, the content of these slides is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </p>
+  </footer>
+  <script src="./_shared/scripts/shower.min.js"></script>
+  <script src="./_shared/scripts/enhancements.js"></script>
+  <script async src="//platform.twitter.com/widgets.js"></script>
+  <script>ga=function(){ga.q.push(arguments)};ga.q=[['create','UA-6142365-12','auto'],['require','autotrack'],['send','pageview']];ga.l=1*new Date</script>
+  <script async src="//www.google-analytics.com/analytics.js"></script>
+  <script async src="./_shared/scripts/autotrack.js"></script>
+</body>
+</html>
