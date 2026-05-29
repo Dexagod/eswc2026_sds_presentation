@@ -34,7 +34,7 @@
       </a>
     </h2>
     <h3 style="font-size: .8em; margin-top: -1em;">
-      Semantics in Dataspaces workshop at ESWC 2026
+      Semantics in Dataspaces workshop<br>at ESWC 2026
     </h3>
     <br>
     <p class="author"><a href="https://rubendedecker.be/">Ruben Dedecker</a></p>
@@ -50,36 +50,7 @@
   </div>
 
   <!-- contextualization -->
-    <!-- <div class="slide" id="">
-      <h2>
-        Contextualization
-      </h2>
-      <ul class="higher" style="margin-left: 3em !important">
-        <li class="small">
-          EU Common Data Spaces initiatives
-        </li>
-        <li class="small">
-          Cross border data sharing and integration
-        </li>
-        <li class="small">
-          Goal for Semantic interoperability
-        </li>
-        <li class="small">
-          Work performed for DeployEMDS project
-        </li>
-      </ul>
-       <footer class="footer">
-          <p>
-            EU Data Spaces initiatives aim for cross border data sharing, relying on the ability to make data from heterogeneous sources semantically interoperable. 
-            In this con
-          </p>
-      </footer>
-    </div> -->
-
-
-
-  <!-- contextualization -->
-    <div class="slide" id="">
+    <div class="slide" id="data_space_introduction">
       <figure class="cover height">
         <img src="images/eu_data_spaces_cropped.png">
       </figure>
@@ -98,16 +69,18 @@
       </h2>
       <ul class="higher" style="margin-left: 3em !important">
         <li class="small">
-          <b>Regional initiatives</b> (OSLO)<br>
-          provide local publishing baselines
+          <b>Regional initiatives</b><br>
+          <ul><li>local publishing baselines (OSLO)</li></ul>
         </li>
         <li class="small">
-          <b>Established standards</b> (DATEX)<br>
-          provide international interoperability
+          <b>Established standards</b><br>
+          <ul><li>international interoperability(DATEXII)</li></ul>
+          
         </li>
         <li class="small">
-          <b>Semantic alignment</b> bridges the gap<br>
-          between heterogeneous data models
+          <b>Semantic alignment</b>
+          <ul><li>bridges the gap between heterogeneous models</li></ul>
+          
         </li>
       </ul>
        <footer class="footer">
@@ -125,13 +98,13 @@
       </h2>
       <ul class="higher" style="margin-left: 3em !important">
         <li class="small">
-          <b>The Vocabulary Hub</b> manages semantic<br> 
-          artifacts as ontologies and specifications
+          <b>Semantic artifacts</b>
+          <ul><li>ontologies and specifications</li></ul>
         </li>
 
         <li class="small">
-          <b>Available tooling</b> performs alignments<br>
-          over internal data model definitions
+          <b>Dataset alignments</b>
+          <ul><li>internal representations of tooling</li></ul>
         </li>
         <li class="">
           Can we generalize alignments<br>
@@ -143,11 +116,6 @@
     <div class="toc slide" id="toc-artifacts">
       <ul>
         <li class="current"><a href="#toc-artifacts">Data space artifacts</a>
-          <ul>
-            <li><a href="#dataset">Dataset description</a></li>
-            <li><a href="#profile">Dataset profile</a></li>
-            <li><a href="#alignment">Alignment artifact</a></li>
-          </ul>
         </li>
         <li><a href="#toc-architecture">Architectural implications</a></li> 
         <li><a href="#toc-usecase">DeployEMDS use case</a></li>
@@ -161,18 +129,25 @@
       </h2>
       <ul class="higher" style="margin-left: 3em !important">
         <li class="small">
-          <b>DCAT catalogs</b> provide a basis<br>
-          for discovery and interoperability
+          <b>DCAT catalogs</b>
+          <ul><li>basis for discovery and interoperability</li></ul>
         </li>
         <li class="small">
-          <b>Application profiles</b> define<br>
-          domain-specific metadata
+          <b>Application profiles</b> 
+          <ul><li>domain-specific metadata</li></ul>
         </li>
         <li class="">
           Standards internalize formats, schemas, 
           vocabularies, specifications, ...<br>
         </li>
       </ul>
+    </div>
+
+    <div class="slide" id="layout_dataset">
+      <h2>Dataset description</h2>
+      <figure class="width higher">
+        <img src="images/dataset_layout.svg" alt="">
+      </figure>
     </div>
 
   <!-- dataset profile -->
@@ -182,18 +157,25 @@
       </h2>
       <ul class="higher" style="margin-left: 3em !important">
         <li class="small">
-          <b>Unified profile</b> declaration of specification<br>
-          defining internal and extended constraints
+          <b>Unified profile</b> 
+          <ul><li>declares internal and extended<br>conformance constraints of standards</li></ul>
         </li>
         <li class="small">
-          <b>Semantic artifact</b> published by the<br>
-          Vocabulary Hub as a profile catalog
+          <b>Semantic artifact</b> 
+          <ul><li>published by Vocabulary Hub</li></ul>
         </li>
         <li class="">
-          Dataset profiles explicitly link relevant<br>
-          resources for discovery and alignment
+          Profiles provide discoverability by<br>
+          explicit linking of constraining resources
         </li>
       </ul>
+    </div>
+
+    <div class="slide" id="layout_profile">
+      <h2>Dataset profile</h2>
+      <figure class="width higher">
+        <img src="images/profile_layout.svg" alt="">
+      </figure>
     </div>
 
   <!-- alignment artifact -->
@@ -203,42 +185,26 @@
       </h2>
       <ul class="higher" style="margin-left: 3em !important">
         <li class="small">
-          Defines <b>alignment profile</b> from<br>
-          source to target dataset profile
+          <b>Alignment profile</b>
+          <ul><li>from source to target profile</li></ul>
         </li>
         <li class="small">
-          Publishes <b>executable mappings</b> as<br>
-          <b>semantic artifact</b> in the vocabulary hub
+          <b>Executable mappings</b> 
           <ul>
             <li>SPARQL Construct, RML, Notation3</li>
           </ul>
         </li>
         <li class="">
-          Alignment artifacts enable automating<br>
-          integration pipelines by consumers
+          Alignment artifacts enable automation<br>
+          of integration pipelines by consumers
         </li>
       </ul>
     </div>
 
-
-    <div class="slide" id="dataset-code">
-      <h2>From datasets</h2>
+    <div class="slide" id="layout_alignment">
+      <h2>Alignment artifact</h2>
       <figure class="width higher">
-        <img src="images/dataset.jpg" alt="">
-      </figure>
-    </div>
-    <div class="slide" id="profile-code">
-
-      <h2>to profiles</h2>
-      <figure class="width higher">
-        <img src="images/profile.jpg" alt="">
-      </figure>
-    </div>
-
-    <div class="slide" id="alignments-code">
-      <h2>to alignments</h2>
-      <figure class="width higher">
-        <img src="images/align.jpg" alt="">
+        <img src="images/alignment_layout.svg" alt="">
       </figure>
     </div>
 
@@ -246,21 +212,36 @@
       <ul>
         <li><a href="#toc-artifacts">Data space artifacts</a></li>
         <li class="current"><a href="#toc-architecture">Architectural implications</a>
-          <ul>
-            <li><a href="#dataset-publishing">Dataset publishing</a></li>
-            <li><a href="#alignment-publishing">Alignment publishing</a></li>
-            <li><a href="#discovery-and-integration">Discovery and integration</a></li>
-          </ul>
         </li>
         <li><a href="#toc-usecase">DeployEMDS use case</a></li>
       </ul>
     </div>
 
+    <div class="slide" id="dataset-code">
+      <h2>Artifact organization</h2>
+      <figure class="width higher">
+        <img src="images/dataset.jpg" alt="">
+      </figure>
+    </div>
 
-  <!-- dataset definition -->
+    <div class="slide" id="profile-code">
+      <h2>Artifact organization</h2>
+      <figure class="width higher">
+        <img src="images/profile.jpg" alt="">
+      </figure>
+    </div>
+
+    <div class="slide" id="alignments-code">
+      <h2>Artifact organization</h2>
+      <figure class="width higher">
+        <img src="images/align.jpg" alt="">
+      </figure>
+    </div>
+
+    <!-- dataset definition -->
     <div class="slide" id="dataset-publishing">
       <h2>
-        Dataset publishing
+        Publishing datasets and profiles ...
       </h2>
       <figure class="higher">
         <img src="images/sd_crop_dataset.png" alt="">
@@ -271,7 +252,7 @@
   <!-- alignment publishing -->
     <div class="slide" id="alignment-publishing">
       <h2>
-        Alignment publishing 
+        with associated alignments ... 
       </h2>
       <figure class="higher">
         <img src="images/sd_crop_alignment.png" alt="">
@@ -282,25 +263,18 @@
   <!-- discovery and integration (reference pipelines) -->
     <div class="slide" id="discovery-and-integration">
       <h2>
-        Discovery and integration
+        drives discovery and integration
       </h2>
       <figure class="higher ">
         <img src="images/sd_crop_discover.png" alt="">
       </figure>
     </div>
 
-
     <div class="toc slide" id="toc-usecase">
       <ul>
         <li><a href="#toc-artifacts">Data space artifacts</a></li>
         <li><a href="#toc-architecture">Architectural implications</a></li>
         <li class="current"><a href="#toc-usecase">DeployEMDS use case</a>
-          <ul>
-            <li><a href="#project">Project description</a></li>
-            <li><a href="#pipeline">Continuous integration</a></li>
-            <li><a href="#demo">Demonstrator</a></li>
-            
-          </ul>
         </li>
       </ul>
     </div>
@@ -309,20 +283,22 @@
   <!-- use case introduction -->
     <div class="slide" id="project">
       <h2>
-        DeployEMDS - Alignment of traffic counts
+        Integrating traffic counts
       </h2>
       <ul class="higher" style="margin-left: 3em !important">
         <li class="small">
-          Regional and industry partners<br>
-          over Flanders and Germany
+          <figure class="higher ">
+            <img src="images/1048_deployemds_logo-h_rgb_hr.jpg" alt="" style="height: 100px; margin-left: 0;">
+          </figure>
+        </li>
+        <li>
+          <br>
         </li>
         <li class="small">
-          Alignment of internal data model with,<br>
-          OSLO Verkeersmetingen and SensorThings
+          Alignment of data to client-local data models
         </li>
         <li class="small">
-          Client integration based on automated<br>
-          pipelines for continous mapping and integration
+          Automated integration through mapping pipelines
         </li>
       </ul>
     </div>
@@ -331,47 +307,64 @@
   <!-- end-to-end pipeline setup -->
     <div class="slide" id="pipeline">
       <h2>
-        Continuous integrations through pipelines
+        Automated integration through pipelines
       </h2>
       <ul class="higher" style="margin-left: 3em !important">
         <li class="small">
-          RDF-Connect pipelines used for publishing<br>
-          mapping and integrating RDF data using LDES
+          <b>Linked Data Event Streams</b>
+          <ul><li>replication and synchronization</li></ul>
         </li>
         <li class="small">
-          Pipeline setup based on client discovery<br>
-          of profiles and alignments in data space
+          <b>RDF-Connect</b> 
+          <ul><li>modular integration pipeline</li></ul>
         </li>
         <li class="small">
-          Artifact catalogs provide interoperable<br>
-          baseline for artifact discovery
+          Pipeline initialization based on<br>
+          dataset and alignment discovery
         </li>
       </ul>
     </div>
 
-
-  <!-- demo -->
-    <div class="slide title" id="demo">
-      <h2>It's demo time!</h2>
-      <a href="https://idlabresearch.github.io/vocabulary-hub/">https://idlabresearch.github.io/vocabulary-hub/</a>
+    <div class="slide" id="pipeline_setup">
+      <h2>DeployEMDS data pipeline</h2>
+      <figure class="width higher">
+        <img src="images/pipelines.svg" alt="">
+      </figure>
     </div>
-
 
   <!-- end-to-end pipeline setup -->
     <div class="slide" id="">
       <h2>
-        Where do we go from here?
+        Coming to a data space near you?
       </h2>
       <ul class="higher" style="margin-left: 3em !important">
         <li class="small">
-          Integration of approach in wider<br>
-          data space deployments
+          <b>Scaling behavior</b><br>
+          <ul><li>in wider deployments</li></ul>
         </li>
         <li class="small">
-          Evaluating dataset profiles as basis<br>
-          for AI discovery and alignment systems
+          <b>Data interface definitions</b><br>
+          <ul><li>further automating pipeline creation</li></ul>
+          
+        </li>
+        <li class="small">
+          <b>Integration of AI systems</b><br>
+          <ul><li>for discovery and generating alignments</li></ul>
+          
         </li>
       </ul>
+    </div>
+
+
+
+  <!-- demo -->
+    <div class="slide title" id="demo">
+      <h2 style="margin-top: 3.5em; line-height: 1.2em!important ;">DeployEMDS demonstrator</h2>
+      <a href="https://idlabresearch.github.io/vocabulary-hub/">https://idlabresearch.github.io/vocabulary-hub/</a>
+      <figure class="height" style="position: absolute; top: 2em; right: 2em;">
+        <img src="images/qrgood.png">
+      </figure>
+      <p>ruben.dedecker@ugent.be</p>
     </div>
 
 
